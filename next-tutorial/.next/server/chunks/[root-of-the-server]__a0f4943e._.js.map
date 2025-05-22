@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 60, "column": 0}, "map": {"version":3,"sources":["file:///Users/leelumong/project/study/next-tutorial/app/api/users/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\n\nconst DB = [\n  { id: 1, name: \"Alice\" },\n  { id: 2, name: \"Bob\" },\n  { id: 3, name: \"Charlie\" },\n];\n\nexport async function GET(request: Request) {\n  const searchParams = new URL(request.url).searchParams;\n  const name = searchParams.get(\"name\");\n\n  return NextResponse.json({\n    users: DB.filter((user: UserType) => user.name.includes(name)),\n  });\n}\n\ninterface UserType {\n  id: number;\n  name: string;\n}\n"],"names":[],"mappings":";;;AAAA;;AAEA,MAAM,KAAK;IACT;QAAE,IAAI;QAAG,MAAM;IAAQ;IACvB;QAAE,IAAI;QAAG,MAAM;IAAM;IACrB;QAAE,IAAI;QAAG,MAAM;IAAU;CAC1B;AAEM,eAAe,IAAI,OAAgB;IACxC,MAAM,eAAe,IAAI,IAAI,QAAQ,GAAG,EAAE,YAAY;IACtD,MAAM,OAAO,aAAa,GAAG,CAAC;IAE9B,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;QACvB,OAAO,GAAG,MAAM,CAAC,CAAC,OAAmB,KAAK,IAAI,CAAC,QAAQ,CAAC;IAC1D;AACF","debugId":null}}]
+}
